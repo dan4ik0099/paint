@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/line"
+        android:layout_width="135dp"
+        android:layout_height="130px"
+        android:onClick="switchCircle"
+        android:text="◯"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/quad"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/black"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:onClick="black"
+        android:text="#000000"
+
+        android:textSize="0pt"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/colorLine"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:backgroundTint="#000000"
+        android:onClick="switchForColor"
+        android:text="1"
+        android:textSize="0pt"
+        app:layout_constraintStart_toEndOf="@+id/edit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Линия"
+        app:layout_constraintBottom_toBottomOf="@+id/colorLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/colorLine" />
+
+    <FrameLayout
+        android:id="@+id/paint"
+        android:layout_width="409dp"
+        android:layout_height="1100px"
+        android:layout_marginTop="100px"
+        app:layout_constraintBottom_toTopOf="@+id/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorLine">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/quad"
+        android:layout_width="136dp"
+        android:layout_height="130px"
+        android:onClick="switchLine"
+        android:text="―"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/circle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/line" />
+
+    <Button
+        android:id="@+id/circle"
+        android:layout_width="136dp"
+        android:layout_height="130px"
+        android:onClick="switchRect"
+        android:text="□"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/quad" />
+
+    <Button
+        android:id="@+id/yellow"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFEB3B"
+        android:onClick="yellow"
+        android:text="#FFEB3B"
+        android:textSize="0pt"
+        app:layout_constraintBottom_toTopOf="@+id/quad"
+        app:layout_constraintStart_toEndOf="@+id/black" />
+
+    <Button
+        android:id="@+id/blue"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0000FF"
+        android:onClick="blue"
+        android:text="#E896FF"
+        android:textSize="0pt"
+        app:layout_constraintBottom_toTopOf="@+id/quad"
+        app:layout_constraintStart_toEndOf="@+id/yellow" />
+
+    <Button
+        android:id="@+id/red"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:onClick="red"
+        android:text="#E91E63"
+
+        android:textSize="0pt"
+        app:layout_constraintBottom_toTopOf="@+id/circle"
+        app:layout_constraintStart_toEndOf="@+id/blue" />
+
+    <TextView
+        android:id="@+id/sa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Линия"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorLine" />
+
+    <Button
+        android:id="@+id/color"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:backgroundTint="#000000"
+        android:onClick="switchForColorLine"
+        android:text="2"
+        android:textSize="0pt"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/sa"
+        app:layout_constraintTop_toBottomOf="@+id/colorLine" />
+
+    <EditText
+        android:id="@+id/lineWidth"
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/colorLine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/height"
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/radius_width"
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="30"
+        app:layout_constraintEnd_toStartOf="@+id/height"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toTopOf="@+id/save"
+        app:layout_constraintEnd_toStartOf="@+id/radius_width"
+        app:layout_constraintTop_toTopOf="@+id/radius_width" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="save"
+        android:text="Сохранить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radius_width" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:onClick="clear"
+        android:text="Очистить"
+        app:layout_constraintEnd_toStartOf="@+id/save"
+        app:layout_constraintTop_toTopOf="@+id/save" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
